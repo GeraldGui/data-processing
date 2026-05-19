@@ -10,7 +10,7 @@ public class Program {
 
         Person person1 = new Person("James", "Carter", 34);
         people.add(person1);
-        Person person2 = new Person("Sofia", "Nguyen", 27);
+        Person person2 = new Person("Kim", "Nguyen", 27);
         people.add(person2);
         Person person3 = new Person("Marcus", "Thompson", 41);
         people.add(person3);
