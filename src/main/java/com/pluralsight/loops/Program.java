@@ -32,12 +32,15 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
 
         lookingForPeople(scanner, people);
+        averageAge(people);
+        oldestPerson(people);
+        youngestPerson(people);
 
 
     }
 
     public static void lookingForPeople(Scanner scanner, List<Person> people) {
-        System.out.println("What name are you looking for: ");
+        System.out.print("What name are you looking for: ");
         String name = scanner.nextLine();
 
         List<Person> match = new ArrayList<>();
@@ -52,5 +55,31 @@ public class Program {
         }
     }
 
+    public static void averageAge(List<Person> peoples) {
+        double totalAge = 0;
+        for (Person people : peoples) {
+            totalAge += people.getAge();
+        }
+        System.out.println("Average for people age is: " + totalAge / peoples.size());
+    }
 
+    public static void oldestPerson(List<Person> peoples) {
+        Person personOld = peoples.get(0);
+        for (Person people : peoples) {
+            if (personOld.getAge() < people.getAge()) {
+                personOld = people;
+            }
+        }
+        System.out.println("Oldest person is : " + personOld);
+    }
+
+    public static void youngestPerson(List<Person> peoples) {
+        Person personYoung = peoples.get(0);
+        for (Person people : peoples) {
+            if (personYoung.getAge() > people.getAge()) {
+                personYoung = people;
+            }
+        }
+        System.out.println("Youngest person is : " + personYoung);
+    }
 }
